@@ -38,24 +38,32 @@ function getUserOptions() {
     if (promptLength) {
         alert ("Choose a password lenght between 8 and 128.")
     }
-        if (confirmLower) {
-            alert ("Add lowercase letters.")
-        }
-            if (confirmUpper) {
-                alert ("Add uppercase letters.")
-            }
-                if (confirmNumeric) {
-                    alert ("Add numbers.")
-                }
-                    else {
-                        alert ("Please pick at least one character type.")
-                    }
-                    // if (confirmLower || confirmUpper || confirmSpecial || confirmNumeric) {
-                    //alert ("Pick at least one character type")}
+    if (confirmLower) {
+        alert ("Add lowercase letters.")
+    }
+    if (confirmUpper) {
+        alert ("Add uppercase letters.")
+    }
+    if (confirmNumeric) {
+        alert ("Add numbers.")
+    }
+    else {
+        alert ("Please pick at least one character type.")
+    }
+    // if (confirmLower || confirmUpper || confirmSpecial || confirmNumeric) {
+    //alert ("Pick at least one character type")}
 }
         
 function generatePassword(userOptions) {
    var password = [];
+
+   for (var i = 0; i < userOptionalChars.length; i++) {
+    var num = Math.floor(Math.random() * 119) + 1;
+
+   if (confirmLower) {
+    Array.prototype.push.apply (userOptionalChars, lowerCasedCharacters);
+   };
+
    // if lower
      // push a random lower char to password
      // add lowerCharsArray to userOptionalChars
@@ -84,7 +92,7 @@ function generatePassword(userOptions) {
     
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// ----generateBtn.addEventListener("click", writePassword);
 // var expectSpecialChars = false;
 // var expectNumericChars = false;
 // var expectUppercaseChars = false;
@@ -94,5 +102,5 @@ generateBtn.addEventListener("click", writePassword);
 //   expectSpecialChars: false,
 //   expectNumericChars: false,
 //   expectUppercaseChars: false,
-//   expectLowercaseChars: false,   
+//   expectLowercaseChars: false, 
 //}
