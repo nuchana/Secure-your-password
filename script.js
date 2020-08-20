@@ -5,6 +5,8 @@ var upperCasedCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M',
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')','(','}','{',']','[','~','-','_','.'];
 var selectedCharacters = [];
+var promptLength
+var passwordText = document.querySelector("#password");
 
 // Write password to the #password input
 function writePassword() {
@@ -18,11 +20,12 @@ function writePassword() {
 function getUserOptions() {
    // get user options and store in vars. 
    // check for length (should be 8-128 characters)
-   var promptLength = parseInt(prompt("Choose a password length between 8 and 128"));
+   promptLength = parseInt(prompt("Choose a password length between 8 and 128"));
    if (promptLength <= 7 || promptLength >= 129) {
     alert ("Choose a password lenght between 8 and 128.");
     getUserOptions();
     return;
+    
 }
     // check if lower, upper, special, numberic and at least one is true. Else alert user
    var confirmLower = confirm("Do you want lowercase letters?");
@@ -32,21 +35,21 @@ function getUserOptions() {
   
     if (confirmLower) {
         alert ("Add lowercase letters.");
-        selectedCharacters.concat (lowerCasedCharacters);
+        selectedCharacters = selectedCharacters.concat (lowerCasedCharacters);
     }
     if (confirmUpper) {
         alert ("Add uppercase letters.");
-        selectedCharacters.concat (upperCasedCharacters);
+        selectedCharacters = selectedCharacters.concat (upperCasedCharacters);
 
     }
     if (confirmNumeric) {
         alert ("Add numbers.");
-        selectedCharacters.concat (numericCharacters);
+        selectCharacters = selectedCharacters.concat (numericCharacters);
     }
 
     if (confirmspecialCharacter) {
         alert ("Add special characters.");
-        selectedCharacters.concat (specialCharacters);
+        selectCharacters = selectedCharacters.concat (specialCharacters);
     }
 
     if (confirmLower === false && !confirmUpper && !confirmNumeric && !confirmspecialCharacter) {
@@ -58,33 +61,29 @@ function getUserOptions() {
 }
         
 function generatePassword() {
-   var password = "";
+   console.log (selectedCharacters)
+    var password = "";
+
+    var char = []
+   
 
    for (var i = 0; i < promptLength; i++) {
-       var char = Math.floor(Math.random()* selectedCharacters.length+1);
-       pass += selectedCharacters.charAt(char)
+    // var char = Math.floor(Math.random()* selectedCharacters.length+1);
+    // password += selectedCharacters.charAt(char)
     
     // var num = Get a random number between 0 and selectedCharacters.length
-    // password += selectedCharacters[num]
-   }
-   return password;
-}
- 
+    // password += selectedCharacters[num] 
 
-function generateP() { 
-    var pass = ''; 
-    var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +  
-            'abcdefghijklmnopqrstuvwxyz0123456789@#$'; 
-      
-    for (i = 1; i <= 8; i++) { 
-        var char = Math.floor(Math.random() 
-                    * str.length + 1); 
-          
-        pass += str.charAt(char) 
-    } 
-      
-    return pass; 
-} 
+    char. push (selectedCharacters [Math.floor (Math.random () * selectedCharacters.length)])
+    }
+    console.log (char)
+   
+    console.log (passwordText)
+
+    passwordText.textContent = char.join(",")
+    console.log (char.join(","))
+   
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", getUserOptions);
@@ -99,5 +98,7 @@ generateBtn.addEventListener("click", getUserOptions);
 //   expectUppercaseChars: false,
 //   expectLowercaseChars: false, 
 //}
-
+// document.getElementById("myBtn").addEventListener("click", function(){
+// document.getElementById("demo").innerHTML = "Hello World";
+//});
 
