@@ -3,7 +3,7 @@
 What I did (in addition to the existing codes of writing password to password input )
 
 1. Define and create variables 
-    1.1 array of lowercase, uppercase, numeric and special characters)
+    1.1 array of lowercase, uppercase, numeric and special characters
     1.2 prompt length with condition of 8-128 characters
     1.3 selected Characters to be picked by user
 
@@ -18,6 +18,8 @@ What I did (in addition to the existing codes of writing password to password in
     3.3 Then execute it with return and display it.
 
 4. Generate btn when use click the button to get user options. 
+
+5. However, when I check the result, the password didn't match to what character types I picked earlier. I did all steps logically so not sure what I missed. Please help address this issue in your comments when you check my work
 
 
 ## Review
