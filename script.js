@@ -6,7 +6,6 @@ var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
 var selectedCharacters = [];
 var promptLength
-// var passwordText = document.querySelector("#password");
 
 // Write password to the #password input
 function writePassword() {
@@ -14,8 +13,8 @@ function writePassword() {
     var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
-
 }
+
 // ======= functions definition ======
 function getUserOptions() {
     // get user options and store in vars. 
@@ -68,9 +67,7 @@ function generatePassword() {
 
 
     for (var i = 0; i < promptLength; i++) {
-        // var char = Math.floor(Math.random()* selectedCharacters.length+1);
-        // password += selectedCharacters.charAt(char)
-
+      
         // var num = Get a random number between 0 and selectedCharacters.length
         // password += selectedCharacters[num] 
 
@@ -84,17 +81,7 @@ function generatePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", getUserOptions);
-// var expectSpecialChars = false;
-// var expectNumericChars = false;
-// var expectUppercaseChars = false;
-// var expectLowercaseChars = false;
 
-// var userOptions = { 
-//   expectSpecialChars: false,
-//   expectNumericChars: false,
-//   expectUppercaseChars: false,
-//   expectLowercaseChars: false, 
-//}
 
 
 
