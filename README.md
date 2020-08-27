@@ -19,7 +19,7 @@ What I did (in addition to the existing codes of writing password to password in
 
 4. Generate btn when use click the button to get user options. 
 
-5. However, when I check the result, the password didn't match to what character types I picked earlier. I did all steps logically so not sure what I missed. Please help address this issue in your comments when you check my work
+5. However, when I check the result, the password didn't match to what character types I picked earlier. I did all steps logically so not sure what I missed. Please help address this issue in your comments when you check my work. Thank you!
 
 
 ## Review
